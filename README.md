@@ -1,4 +1,22 @@
-# ResNet + Keras: code from scratch train on GPU
+# Implement ResNet in Tensorflow & Keras from scratch and train on GPU
+
+## Objective  
+- Implement ResNet from scratch 
+- using Tensorflow and Keras
+- train on CPU then switch to GPU to compare speed
+
+## Packages used
+- tensorflow 2.4.1 (includes keras too)
+- python 3.7.9
+- scikit-learn 0.24.1
+- numpy 3.7.9
+
+## GPU support
+The following NVIDIA software must be installed on your system:
+- NVIDIA® GPU drivers —CUDA® 11.2 requires 450.80.02 or higher.
+- CUDA® Toolkit —TensorFlow supports CUDA® 11.2 (TensorFlow >= 2.5.0)
+- CUPTI ships with the CUDA® Toolkit.
+- cuDNN SDK 8.1.0 cuDNN versions).
 
 This repo contains one notebook where I'm building a 50-layer ResNet model from scratch using Keras and training it first on CPU (way too slow), then on Kaggle GPU (for a significant improvement in speed).
 
