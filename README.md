@@ -18,7 +18,14 @@ The following NVIDIA software must be installed on your system:
 - CUPTI ships with the CUDA® Toolkit.
 - cuDNN SDK 8.1.0 cuDNN versions).
 
-This repo contains one notebook where I'm building a 50-layer ResNet model from scratch using Keras and training it first on CPU (way too slow), then on Kaggle GPU (for a significant improvement in speed).
+## Implementation
+
+### Resnet50
+
+ResNet is a family of Deep Neural Networks architectures introduced in 2015 <a href="https://arxiv.org/pdf/1512.03385.pdf">He et al.</a>. The original paper discussed 5 different architectures: 18-, 24-, 50-, 101- and 152-layer Neural Networks. I am implementing the 50-layer ResNet or ResNet50. 
+
+
+
 
 <b>How to use it:</b>   
 Open the Jupyter Notebook in this folder. You can clone it, download it or just read it here. There is also a link at the top of the Notebook which takes you to the same Notebook on Kaggle.
