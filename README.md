@@ -1,4 +1,4 @@
-# Implement ResNet in Tensorflow & Keras from scratch and train on GPU
+# Deep Learning with Tensorflow & Keras: implement ResNet50 from scratch and train on GPU
 
 ## Objective  
 - Implement ResNet from scratch 
