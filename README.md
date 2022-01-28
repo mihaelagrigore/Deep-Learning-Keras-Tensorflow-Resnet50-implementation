@@ -37,6 +37,8 @@ The identity block can be used when the input x has the same dimension (width an
 
 ![image](https://user-images.githubusercontent.com/38474985/151539537-b9536443-1cf5-459a-a172-e9a820f0d3b0.png)
 
+The only difference between the identity block and the convolution block is that the second has another convolution layer (plus a batch normalization) on the skip conection path. The convolution layer on the skip connection path has the purpose of resizing x so that its dimension matches the output and thus I can add those two together.
+
 Following the ResNet50 architecture described in <a href="https://arxiv.org/pdf/1512.03385.pdf">He et al. 2015</a>, the architecture I'm implementing in this repo has the structure illustrated below:
 
 ![image](https://user-images.githubusercontent.com/38474985/151537573-1b1b8a42-da7e-4bdb-8be1-1d1b34ae2ea9.png)
