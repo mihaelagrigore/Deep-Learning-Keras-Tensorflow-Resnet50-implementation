@@ -74,13 +74,13 @@ To set up GPU support on a physical machine, follow <a href='https://www.tensorf
         └── basic_functions.py  
  ```
  
- To process the data for obtaining squared images of the pre-defined size (as per model architecture definition), run
+ To process the data for obtaining squared images of the pre-defined size (as per model architecture definition), run the <a href='https://github.com/mihaelagrigore/Deep-Learning-Keras-Tensorflow-Resnet50-implementation/blob/441bb5891ed533dcabc7f214e4e9c3573acfd2c2/src/data/make_dataset.py'>make_dataset.py</a> script
   ```
   make_dataset.py --dataset 'Animals-10'
   ```
   from the src/data folder
   
-  To train a model, run:
+  To train a model, run the <a href='https://github.com/mihaelagrigore/Deep-Learning-Keras-Tensorflow-Resnet50-implementation/blob/441bb5891ed533dcabc7f214e4e9c3573acfd2c2/example_train.py'>example_train.py</a> script:
    ```
   example_train.py --help
   ```
@@ -103,7 +103,7 @@ To set up GPU support on a physical machine, follow <a href='https://www.tensorf
   ```
   and select your preferred training options.
   
-  To make predictions using a pre-trained model:
+  To make predictions using a pre-trained model, use the <a href='https://github.com/mihaelagrigore/Deep-Learning-Keras-Tensorflow-Resnet50-implementation/blob/441bb5891ed533dcabc7f214e4e9c3573acfd2c2/example_predict.py'>example_predict.py</a> script:
    ```
   example_predict.py --help
   ```  
