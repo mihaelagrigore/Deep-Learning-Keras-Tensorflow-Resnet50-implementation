@@ -5,7 +5,7 @@
 - using Tensorflow and Keras
 - train on CPU then switch to GPU to compare speed
 
-If you want to jump right to using a ResNet, have a look at <a href='https://keras.io/api/applications/'>Keras' pre-trained models</a>. In this Notebook I will code my ResNet from scratch not out of need, as implementations already exist, but as a valuable learning process.
+If you want to jump right to using a ResNet, have a look at <a href='https://keras.io/api/applications/'>Keras' pre-trained models</a>. In this repo I am implementing a 50-layer ResNet from scratch not out of need, as implementations already exist, but as a learning process.
 
 ## Packages used
 - python 3.7.9
