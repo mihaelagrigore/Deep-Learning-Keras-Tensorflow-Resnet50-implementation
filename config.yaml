@@ -1,0 +1,16 @@
+dataset:
+  raw_data_path: images\\raw
+  proc_data_path: images\\processed
+  default_train_data: Animals-10
+  default_test_path: images\\test-samples
+training:
+  validation_split: 0.2
+  label_mode: categorical # for categorical_crossentropy loss)
+  batch_size: 32
+  epochs: 40
+model:
+  input_size: (64, 64)
+  channels: 3
+  save_path: models
+logging:
+  level: 10 # logging.DEBUG: 10, logging.INFO: 20, logging.WARNING: 30
