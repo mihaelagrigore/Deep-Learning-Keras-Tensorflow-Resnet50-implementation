@@ -8,10 +8,12 @@
 If you want to jump right to using a ResNet, have a look at <a href='https://keras.io/api/applications/'>Keras' pre-trained models</a>. In this Notebook I will code my ResNet from scratch not out of need, as implementations already exist, but as a valuable learning process.
 
 ## Packages used
-- tensorflow 2.4.1 (includes keras too)
 - python 3.7.9
+- tensorflow 2.7.0 (includes keras)
 - scikit-learn 0.24.1
 - numpy 3.7.9
+- pillow 8.2.0
+- opencv-python 4.4.0.46
 
 ## GPU support
 The following NVIDIA software must be installed on your system:
@@ -48,3 +50,69 @@ Following the ResNet50 architecture described in <a href="https://arxiv.org/pdf/
 The easiest way to see the diffence in training duration is to open the notebook in this repository, <a href="https://github.com/mihaelagrigore/ResNet-Keras-code-from-scratch-train-on-GPU/blob/main/resnet-keras-code-from-scratch-train-on-gpu.ipynb">resnet-keras-code-from-scratch-train-on-gpu.ipynb</a>, on Kaggle and follow the instructions for ativating GPU contained in the notebook. This is what I did in my case, as I don't have a separate GPU on my laptop.
 
 To set up GPU support on a physical machine, follow <a href='https://www.tensorflow.org/install/gpu'>these instructions</a>.
+
+## Project contents
+```
+├── config.yaml               - configuration parameters at project level  
+├── example_predict.py        - example prediction script using a pretrained model
+├── example_train.py          - example script for training the ResNet50 model on a given dataset
+├── images              
+│   ├── processed             - processed image data, obtained from raw images, ready for feeding into the model during training  
+│   ├── raw                   - raw image data  
+│   └── test-samples          - test images for model prediction on unsees images  
+├── models                    - folder to save trained models   
+│   ├── 202201312229          - saved trained model  
+├── requirements.txt          - project requirements  
+└── src  
+    ├── data                  - scripts for data manipulation 
+    │   └── make_dataset.py   - preprocess training data from 'raw' folder and outputs into 'processed' 
+    ├── models      
+    │   ├── predict_model.py  - implements model prediction procedure  
+    │   ├── resnet50.py       - contains class ResNet50, the implementation of the 50 layer ResNet model  
+    │   ├── train_model.py    - implements model training procedure  
+    └── utils  
+        └── basic_functions.py  
+ ```
+ 
+ To process the data for obtaining squared images of the pre-defined size (as per model architecture definition), run
+  ```
+  make_dataset.py --dataset 'Animals-10'
+  ```
+  from the src/data folder
+  
+  To train a model, run:
+   ```
+  example_train.py --help
+  ```
+  to see available parameters:
+  ```
+  optional arguments:
+  -h, --help            show this help message and exit
+  --validation_split VALIDATION_SPLIT
+                        How much training data to use for validation ? Default value: 0.2
+  --batch_size BATCH_SIZE
+                        What batch size to use for training. Default value: 32
+  --epochs EPOCHS       How many epochs to train for ? Default: 40, with early stopping callback
+  --input_size INPUT_SIZE
+                        What input size to set for the ResNet50 model architecture ? Default: '(64, 64)'
+  --channels CHANNELS   How many channels do training images have ? Assumed RGB images by default. Default: 3
+  --log_level LOG_LEVEL
+                        How verbose do you want the logging level ? DEBUG: 10, INFO: 20, WARNING: 30
+  --fld FLD             Name of the training data folder. Must be placed inside images/processed. Default: Animals-10
+
+  ```
+  and select your preferred training options.
+  
+  To make predictions using a pre-trained model:
+   ```
+  example_predict.py --help
+  ```  
+  and choose the desired setting from:
+
+  ```
+  optional arguments:
+  -h, --help            show this help message and exit
+  --checkpoint CHECKPOINT
+                        Where to load the pretrained model from ? Default: random pick from inside models folder
+  --image IMAGE         Which image to classify (full path) ? Default: no default value, will throw error
+```
