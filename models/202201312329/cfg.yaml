@@ -1,0 +1,16 @@
+training:
+  channels: 3
+  class_names:
+  - cane
+  - cavallo
+  - elefante
+  - farfalla
+  - gallina
+  - gatto
+  - mucca
+  - pecora
+  - ragno
+  - scoiattolo
+  image_size: !!python/tuple
+  - 64
+  - 64
